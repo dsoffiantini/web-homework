@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import AppRouter from './routes'
 import { ApolloProvider } from 'react-apollo'
+import AppRouter from './routes'
 import { client } from './network/apollo-client'
 
 ReactDOM.render(

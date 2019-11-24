@@ -34,6 +34,31 @@ module.exports = function main (options, cb) {
     useNewUrlParser: true
   })
 
+  // Seed Database
+  // const csv = require('csvtojson')
+  // const { Seeder } = require('mongo-seeding')
+  // const config = {
+  //   database: {
+  //     host: '127.0.0.1',
+  //     port: 27017,
+  //     name: 'mydatabase'
+  //   },
+  //   dropDatabase: true
+  // }
+  // const seeder = new Seeder(config)
+
+  // csv()
+  //   .fromFile('./transactions')
+  //   .then((transactions) => {
+  //     console.log(transactions)
+  //     seeder.import(transactions).then(() => {
+  //       console.log('Success')
+  //     })
+  //       .catch(err => {
+  //         console.log('Error', err)
+  //       })
+  //   })
+
   // Setup error handling
   function unhandledError (err) {
     // Log the errors
