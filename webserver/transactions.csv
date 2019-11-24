@@ -1,0 +1,6 @@
+user_id,description,merchant_id,debit,credit,amount
+6dff3078-07b7-4a53-8585-f4c7570b56ad,A cool transaction,1b58e148-345f-42d8-b521-62077dc299b9,true,false,2000
+e1059cdd-b32c-4fe6-88be-ab86650ccc0d,Payment for food,d84192ac-d2ab-465d-a19a-13c7b9cea80e,true,false,50
+b18e619d-42ea-4415-846c-1e65e7b8e34a,An even cooler transaction,94acdab1-4a0d-496c-9732-02b8c65de8dc,false,true,40
+2dae407a-eb34-422f-a23e-089b278b0ab1,Test Transaction,1e91b60e-e734-4fad-bb63-b754d2c1d9f1,false,true,25.25
+4309f627-7a23-42ce-9a68-c4b744977b71,Hello World,aba74e06-f823-414e-a8ec-34c2a7a447d5,false,true,300.5
