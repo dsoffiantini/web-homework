@@ -41,7 +41,16 @@ module.exports = {
     '@babel/plugin-syntax-import-meta',
     ['@babel/plugin-proposal-class-properties', { loose: false }],
     '@babel/plugin-proposal-json-strings',
-    'emotion'
+    'emotion',
+    [
+      'babel-plugin-import',
+      {
+        'libraryName': '@material-ui/core',
+        'libraryDirectory': 'esm',
+        'camel2DashComponentName': false
+      },
+      'core'
+    ]
   ],
   env: {
     test: {
