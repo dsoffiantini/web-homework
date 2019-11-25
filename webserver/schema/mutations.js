@@ -39,6 +39,18 @@ const mutation = new GraphQLObjectType({
           { user_id, description, merchant_id, debit, credit, amount }
         ).exec();
       }
+    },
+    deleteTransaction: {
+      type: TransactionType,
+      args: {
+        id: { type: GraphQLString }
+      },
+      /* eslint-disable-next-line camelcase */
+      resolve(parentValue, { id, user_id, description, merchant_id, debit, credit, amount }) {
+        return TransactionModel.findByIdAndDelete(
+          id
+        ).exec();
+      }
     }
   }
 });

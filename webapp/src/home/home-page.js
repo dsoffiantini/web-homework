@@ -1,13 +1,19 @@
 import React, { Fragment } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useQuery } from 'react-apollo';
+import { Link } from 'react-router-dom';
+import { useQuery, useMutation } from 'react-apollo';
 import { getTransactions } from '../graphql/queries';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import { deleteTransaction } from '../graphql/mutations';
 
 export function Home() {
-  const { push } = useHistory();
-  const { data, error, loading } = useQuery(getTransactions);
+  const { data, error, loading, refetch } = useQuery(getTransactions);
+  const [removeTransaction] = useMutation(deleteTransaction)
+
+  const remove = async id => {
+    await removeTransaction({ variables: { id } });
+    await refetch();
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -23,8 +29,10 @@ export function Home() {
     <Fragment>
       <List>
         {transactions.map(transaction => (
-          <ListItem key={transaction.id} onClick={() => push(`/edit-transaction/${transaction.id}`)}>
+          <ListItem key={transaction.id}>
             {transaction.description}
+            <Link to={`/edit-transaction/${transaction.id}`}>Edit</Link>
+            <a onClick={() => remove(transaction.id)}>Delete</a>
           </ListItem>
         ))}
       </List>

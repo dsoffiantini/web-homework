@@ -57,3 +57,11 @@ export const updateTransaction = gql`
     }
   }
 `;
+
+export const deleteTransaction = gql`
+  mutation DeleteTransaction($id: String!) {
+    deleteTransaction(id: $id) {
+      id
+    }
+  }
+`;
